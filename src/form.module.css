@@ -28,7 +28,7 @@
     color: dodgerblue;
 }
 .contactlist{
-    width: 70%;
+    width: 60rem;
     background-color: whitesmoke;
     border-radius: 12px;
     padding: 20px;
@@ -40,8 +40,23 @@
     background-color: beige;
     list-style-type: none;
 }
+.txtcenter{
+    text-align: center;
+}
 .mainlist{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+}
+.deletebtn{
+    font-size: 28px;
+    cursor: pointer;
+    text-align: center;
+}
+.alertsec{
+    background-color: lightpink;
+    color: red;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
 }

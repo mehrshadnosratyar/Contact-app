@@ -38,7 +38,7 @@ function Form (){
                 <div  onClick={submitHandler} className={styles.submit}>Add contact</div>
             </div>
         </div>
-        <div>{alert ? <p>{alert}</p> : null}</div>
+        <div className={styles.alertsec}>{alert ? <p>{alert}</p> : null}</div>
         <div className={styles.contactlist}>
             <h3 className={styles.listheader} >CONTACTS LIST</h3>
             <Contacts contacts={contactProps} deleteFunc={deleteHandler} />

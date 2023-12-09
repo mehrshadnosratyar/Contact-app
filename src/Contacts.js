@@ -12,19 +12,19 @@ import styles from "./form.module.css"
                     {contacts.map(contact => (<li className={styles.listitem} key={contact.id}>
                         {contact.name }  { contact.lname}
                         <div>
-                            <p>
+                            <p className={styles.txtcenter}>
                             <span>📧</span>
                             {contact.email}
                             </p>    
                         </div>
                         <div>
-                            <p>
+                            <p className={styles.txtcenter}>
                             <span>📞</span>
                             {contact.number}
                             </p>
                         </div>
                         <div>
-                            <span onClick={() => deleteFunc(contact.id)} href="#">🗑</span>
+                            <span className= {styles.deletebtn} onClick={() => deleteFunc(contact.id)} >🗑</span>
                         </div>
                         </li>))}
                 </ul>
