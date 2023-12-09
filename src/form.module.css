@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    gap: 50px;
+}
+.title{
+   margin: 40px 0;
+    color: dodgerblue;
+}
+.form{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: auto auto;
+}
+.submit{
+    grid-column: span 2;
+    background-color: dodgerblue;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.listheader{
+    text-align:center;
+    color: dodgerblue;
+}
+.contactlist{
+    width: 70%;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    padding: 20px;
+}
+.listitem{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: beige;
+    list-style-type: none;
+}
+.mainlist{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
