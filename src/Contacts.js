@@ -1,5 +1,5 @@
 import styles from "./form.module.css"
-    function Contacts ({contacts}){
+    function Contacts ({contacts,deleteFunc}){
         
         if(contacts.length==0){
             return(
@@ -10,7 +10,7 @@ import styles from "./form.module.css"
             return(
                 <ul className={styles.mainlist}>
                     {contacts.map(contact => (<li className={styles.listitem} key={contact.id}>
-                        {contact.name + " " + contact.lname}
+                        {contact.name }  { contact.lname}
                         <div>
                             <p>
                             <span>📧</span>
@@ -24,7 +24,7 @@ import styles from "./form.module.css"
                             </p>
                         </div>
                         <div>
-                            <a href="#">🗑</a>
+                            <span onClick={() => deleteFunc(contact.id)} href="#">🗑</span>
                         </div>
                         </li>))}
                 </ul>

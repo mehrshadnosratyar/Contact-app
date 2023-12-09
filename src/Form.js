@@ -7,7 +7,7 @@ function Form (){
     const [contactsInfo , setContacts] = useState({id:"", name:"",lname:"",email:"",number:""})
     const [contactProps , setProps] = useState([])
     const [alert,setAlert] = useState("")
-    function changeHandeler(event) {
+    function changeHandler(event) {
         setContacts( (contactsInfo) => ({...contactsInfo,[event.target.name]:event.target.value}))
     };
 
@@ -21,23 +21,27 @@ function Form (){
         setProps(contacts => ([...contacts,newContact]))
         setContacts({name:"",lname:"",email:"",number:""})
     }
+    function deleteHandler(id){
+        const filteredArray =  contactProps.filter(contact => (contact.id!==id))
+        setProps(filteredArray)
+    }
 
     return(
     <main className={styles.container}>
         <div>
             <h1 className={styles.title}>CONTACT APP</h1>
             <div className={styles.form}>
-                <input name="name" type="text" value={contactsInfo.name} placeholder="Name" onChange={changeHandeler} />
-                <input name="lname" type="text" value={contactsInfo.lname} placeholder="Last Name"onChange={changeHandeler}/>
-                <input name="email" type="email" value={contactsInfo.email} placeholder="Email" onChange={changeHandeler}/>
-                <input name="number" type="number" value={contactsInfo.number} placeholder="Number" onChange={changeHandeler}/>
+                <input name="name" type="text" value={contactsInfo.name} placeholder="Name" onChange={changeHandler} />
+                <input name="lname" type="text" value={contactsInfo.lname} placeholder="Last Name"onChange={changeHandler}/>
+                <input name="email" type="email" value={contactsInfo.email} placeholder="Email" onChange={changeHandler}/>
+                <input name="number" type="number" value={contactsInfo.number} placeholder="Number" onChange={changeHandler}/>
                 <div  onClick={submitHandler} className={styles.submit}>Add contact</div>
             </div>
         </div>
         <div>{alert ? <p>{alert}</p> : null}</div>
         <div className={styles.contactlist}>
             <h3 className={styles.listheader} >CONTACTS LIST</h3>
-            <Contacts contacts={contactProps} />
+            <Contacts contacts={contactProps} deleteFunc={deleteHandler} />
         </div>
     </main>
         )
