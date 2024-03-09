@@ -3,7 +3,7 @@ import Contacts from "./Contacts";
 import styles from "./form.module.css"
 import {v4} from "uuid";
 function Form (){
-    
+    console.log("hi body!")
     const [contactsInfo , setContacts] = useState({id:"", name:"",lname:"",email:"",number:""})
     const [contactProps , setProps] = useState([])
     const [alert,setAlert] = useState("")
